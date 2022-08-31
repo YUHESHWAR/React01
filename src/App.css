@@ -10,7 +10,29 @@ img {
   object-fit: cover;
 }
 
-div {
+.profile-container {
+  /* display: inline-block; */
+  margin: 20px;
+  border: 4px solid;
+  border-radius: 20px;
+}
+
+.counter-button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.counter-button-container button {
+  font-size: 20px;
+}
+
+.progress-bar {
+  width: 250px;
+  height: 20px;
+}
+
+/* div {
   padding: 20px;
   border: 2px solid;
-}
+} */
