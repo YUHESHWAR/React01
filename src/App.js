@@ -48,7 +48,7 @@ function App() {
 
       {/* <MovieList /> */}
 
-      {/* <ColorGame /> */}
+      <ColorGame />
 
     </div>
   );
