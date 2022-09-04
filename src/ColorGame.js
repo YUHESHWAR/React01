@@ -20,10 +20,10 @@ export function ColorGame() {
                 type="text"
                 style={styles_color}
                 onChange={(event) => setColor(event.target.value)} />
+            <Button variant="contained">Contained</Button>
             {colorList.map((clr, index) => (
                 <ColorList key={index} color={clr} />
             ))}
-            <Button variant="contained">Contained</Button>
         </div>
     );
 }
