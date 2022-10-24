@@ -3,16 +3,16 @@ import { ColorList } from './ColorList';
 import Button from '@mui/material/Button';
 
 export function ColorGame() {
-    const colorList = [
-        "red",
-        "yellow",
-        "pink",
-        "orange"
-    ];
     const [color, setColor] = useState("white");
     const styles_color = {
         background: color
     };
+    const [colorList, setColorList] = useState([
+        "red",
+        "yellow",
+        "pink",
+        "orange"
+    ]);
     return (
         <div>
             <input
@@ -20,7 +20,12 @@ export function ColorGame() {
                 type="text"
                 style={styles_color}
                 onChange={(event) => setColor(event.target.value)} />
-            <Button variant="contained">Contained</Button>
+            <Button
+                variant="contained"
+                onClick={() => setColorList([...colorList, color])}
+            >
+                Add Color
+            </Button>
             {colorList.map((clr, index) => (
                 <ColorList key={index} color={clr} />
             ))}
