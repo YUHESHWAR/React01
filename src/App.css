@@ -33,7 +33,7 @@
 }
 
 .movie-container {
-  padding: 10px;
+  /* padding: 10px; */
   width: 350px;
   /* background-color: rgb(193, 166, 247); */
 }
@@ -78,4 +78,9 @@
   gap: 15px;
   max-width: 450px;
   margin: 0 auto;
+}
+
+#outlined-basic {
+  height: 20px;
+
 }

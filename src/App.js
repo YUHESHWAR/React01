@@ -6,6 +6,8 @@ import { MovieList } from './MovieList';
 import { ColorGame } from './ColorGame';
 import { Msg } from './Msg';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 // console.log(double(100))
 
@@ -132,21 +134,37 @@ function AddMovie({ movieList, setMovieList }) {
 
   return (
     <div className='add-movi-form'>
-      <input type="text" placeholder='Name'
+      <TextField
+        label="Name"
+        id="outlined-basic"
+        variant="outlined"
         value={name}
-        onChange={(event) => setName(event.target.value)} />
+        onChange={(event) => setName(event.target.value)}
+      />
 
-      <input type="text" placeholder='Poster'
+      <TextField
+        label="Poster"
+        id="outlined-basic"
+        variant="outlined"
         value={poster}
-        onChange={(event) => setPoster(event.target.value)} />
+        onChange={(event) => setPoster(event.target.value)}
+      />
 
-      <input type="text" placeholder='Rating'
+      <TextField
+        label="Rating"
+        id="outlined-basic"
+        variant="outlined"
         value={rating}
-        onChange={(event) => setRating(event.target.value)} />
+        onChange={(event) => setRating(event.target.value)}
+      />
 
-      <input type="text" placeholder='Summary'
+      <TextField
+        label="Summary"
+        id="outlined-basic"
+        variant="outlined"
         value={summary}
-        onChange={(event) => setSummary(event.target.value)} />
+        onChange={(event) => setSummary(event.target.value)}
+      />
 
       <Button
         variant="contained"
