@@ -26,7 +26,7 @@ function App() {
       image: "https://preview.redd.it/qqz2asvw4aj51.jpg?auto=webp&s=90cd37751ee6e34e99d0c33ce3e193352cd085df"
     }
   ]
-
+  //
   const [movieList, setMovieList] = useState([
     {
       name: "Vikram",
