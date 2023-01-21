@@ -22,7 +22,7 @@ function App() {
 function Msg({ name, url }) {
   return (
     <div>
-      <img className=" " src={url} />
+      <img className="profile" src={url} />
       <h1>Hello {name} 😀 😀</h1>
     </div>
   );
