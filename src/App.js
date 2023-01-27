@@ -25,20 +25,29 @@ function App() {
   ]
   return (
     <div className="App"> 
-      {/* {users.map(({ name, url })=>(
+      {users.map(({ name, url })=>(
         <Msg name={name} url={url}/>
-      ))} */}
-      <Counter />
+      ))}
+      
     </div>
   );
 }
 
 function Counter(){
   const[like,setLike] = useState(0);
+  const[dislike,setDislike] = useState(0); 
+  const styles={
+    color:like>= 20 ? "orange": "blue"
+  };
   return(
-    <div>
-      <button onClick={()=>setLike(like+1)}>Like</button>
-      <p>{like}</p>
+    <div className='counter'>
+      {like>=10? <h3 style={styles}>You have reached 10 likes</h3> : null}
+      <progress className='progress-bar' max={100} value={like/(like+dislike)*100}></progress>
+      <div className="buttons">
+        <button onClick={()=>setLike(like+1)}>👍🏻 {like}</button>
+        <button onClick={()=>setDislike(dislike+1)}>👎🏻 {dislike}</button><br />
+      </div>
+      
     </div>
   )
 }
@@ -47,6 +56,7 @@ function Msg({ name, url }) {
     <div>
       <img className="profile" src={url} />
       <h1>Hello {name} 😀 😀</h1>
+      <Counter />
     </div>
   );
 }

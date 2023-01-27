@@ -7,3 +7,16 @@
   background-repeat: no-repeat;
   background-size: cover;
  }
+ .buttons{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+ }
+ .counter{
+  width: min-content;
+  margin: 0 auto;
+  margin-bottom: 30px;
+ }
+ .progress-bar{
+  width: 230px;
+ }
