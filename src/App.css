@@ -1,22 +1,59 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 }
-.profile{
+.profile {
   height: 225px;
   aspect-ratio: 1/ 1;
   background-repeat: no-repeat;
   background-size: cover;
- }
- .buttons{
+}
+
+/* Counter CSS */
+.buttons {
   display: flex;
   gap: 10px;
   justify-content: flex-end;
- }
- .counter{
-  width: min-content;
+}
+.counter {
   margin: 0 auto;
   margin-bottom: 30px;
- }
- .progress-bar{
-  width: 230px;
- }
+}
+.progress-bar {
+  width: 100%;
+}
+
+/* Movie CSS */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.movie-poster {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+.movie-container {
+  width: 350px;
+}
+.movie-spec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.movie-name {
+  font-size: 24px;
+  margin: 0;
+}
+.movie-rating {
+  font-size: 18px;
+}
+.movie-summary {
+  margin: 0;
+}
