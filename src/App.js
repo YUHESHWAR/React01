@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Msg } from "./Msg";
 import { MovieList } from "./MovieList";
@@ -30,9 +29,7 @@ function App() {
           <Msg name={name} url={url} />
         ))}
       </div> */}
-
       {/* <MovieList /> */}
-
       <ColorGame />
     </div>
   );

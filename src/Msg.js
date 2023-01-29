@@ -8,7 +8,7 @@ export function Msg({ name, url }) {
   };
   return (
     <div style={styles}>
-      <img className="profile" src={url} />
+      <img className="profile" alt="Profile pic" src={url} />
       <h1>Hello {name} 😀😀</h1>
       <Counter />
     </div>
