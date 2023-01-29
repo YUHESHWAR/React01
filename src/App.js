@@ -25,11 +25,13 @@ function App() {
   ];
   return (
     <div className="App">
-      {users.map(({ name, url }) => (
-        <Msg name={name} url={url} />
-      ))}
+      {/* <div>
+        {users.map(({ name, url }) => (
+          <Msg name={name} url={url} />
+        ))}
+      </div> */}
 
-      <MovieList />
+      {/* <MovieList /> */}
 
       <ColorGame />
     </div>

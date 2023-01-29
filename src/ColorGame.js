@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { ColorBox } from "./ColorBox";
+import Button from "@mui/material/Button";
 
 export function ColorGame() {
   const [color, setColor] = useState("white");
   const styles = {
     background: color,
+    height: "27px",
   };
   const [colorList, setcolorList] = useState([
     "orange",
@@ -20,9 +22,12 @@ export function ColorGame() {
         type="text"
         placeholder={color}
       />
-      <button onClick={() => setcolorList([...colorList, color])}>
+      <Button
+        variant="contained"
+        onClick={() => setcolorList([...colorList, color])}
+      >
         Add Color
-      </button>
+      </Button>
       {colorList.map((clr) => (
         <ColorBox color={clr} />
       ))}
