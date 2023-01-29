@@ -29,8 +29,21 @@ function App() {
           <Msg name={name} url={url} />
         ))}
       </div> */}
-      {/* <MovieList /> */}
-      <ColorGame />
+      {/* <ColorGame /> */}
+      <AddMovie />
+      <MovieList />
+    </div>
+  );
+}
+
+function AddMovie() {
+  return (
+    <div className="add-movie-form">
+      <input type="text" placeholder="Name" />
+      <input type="text" placeholder="Poster" />
+      <input type="text" placeholder="Rating" />
+      <input type="text" placeholder="Summary" />
+      <button>Add Movie</button>
     </div>
   );
 }
