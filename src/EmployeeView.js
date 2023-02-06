@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Context from "./Context";
 
 export default function EmployeeView() {

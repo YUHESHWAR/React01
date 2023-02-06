@@ -7,7 +7,6 @@ export default function Employee() {
   const navigate = useNavigate();
   return (
     <div>
-      <button onClick={() => navigate("/employee/create")}>Create</button>
       <table border={1}>
         <thead>
           <td>
@@ -42,6 +41,8 @@ export default function Employee() {
           ))}
         </tbody>
       </table>
+      <br />
+      <button onClick={() => navigate("/employee/create")}>Add Employee</button>
     </div>
   );
 }

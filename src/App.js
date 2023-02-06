@@ -13,6 +13,7 @@ import EmployeeCreate from "./EmployeeCreate";
 import EmployeeView from "./EmployeeView";
 import About from "./About";
 import { Home } from "./Home";
+import MovieDetails from "./MovieDetails";
 
 function App() {
   const users = [
@@ -35,6 +36,7 @@ function App() {
   ];
   const [movieList, setMovieList] = useState([
     {
+      id: "1",
       name: "Vikram",
       poster:
         "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRcywLT8os8ZXJb7n3hmSzrSzpnLIDNgHeIufdEvCprHyuxThul",
@@ -43,6 +45,7 @@ function App() {
         "A special agent investigates a murder committed by a masked group of serial killers. However, a tangled maze of clues soon leads him to the drug kingpin of Chennai. ",
     },
     {
+      id: "2",
       name: "RRR",
       poster:
         "https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5Y2E5ZjBmNTMzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg",
@@ -51,6 +54,7 @@ function App() {
         "A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers.",
     },
     {
+      id: "3",
       name: "Bahubali",
       poster:
         "https://m.media-amazon.com/images/M/MV5BYWVlMjVhZWYtNWViNC00ODFkLTk1MmItYjU1MDY5ZDdhMTU3XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_.jpg",
@@ -59,6 +63,7 @@ function App() {
         "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy.",
     },
     {
+      id: "4",
       name: "Ok Kanmani",
       poster:
         "https://i.scdn.co/image/ab67616d0000b2732318539f1b037d942fafa581",
@@ -67,6 +72,7 @@ function App() {
         "Two youngsters Adi and Tara are attracted to each other when they meet at a wedding. Since they do not believe in marriage, they decide to live together. What follows forms the crux of the story.",
     },
     {
+      id: "5",
       name: "Inception",
       poster:
         "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
@@ -75,6 +81,7 @@ function App() {
         "Cobb steals information from his targets by entering their dreams. Saito offers to wipe clean Cobb's criminal history as payment for performing an inception on his sick competitor's son.",
     },
     {
+      id: "6",
       name: "Ant Man",
       poster: "http://www.movienewsletters.net/photos/208057R1.jpg",
       rating: 7.1,
@@ -82,6 +89,7 @@ function App() {
         "Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements.",
     },
     {
+      id: "7",
       name: "Black Panther",
       poster:
         "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpg",
@@ -90,6 +98,7 @@ function App() {
         "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.And has an idea to expand to the outer world",
     },
     {
+      id: "8",
       name: "Captain America",
       poster:
         "https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_FMjpg_UX1000_.jpg",
@@ -191,6 +200,7 @@ function App() {
           <Route path="/movies" element={<MovieList />} />
           <Route path="/films" element={<Navigate replace to="/movies" />} />
           <Route path="/movie/add" element={<AddMovie />} />
+          <Route path="/movies/:id" element={<MovieDetails />} />
           <Route path="/color-game" element={<ColorGame />} />
           <Route path="/about" element={<About />} />
           <Route path="/employee" element={<Employee />} />

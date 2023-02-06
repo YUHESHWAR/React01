@@ -7,7 +7,7 @@ export function MovieList() {
   return (
     <div className="movie-list">
       {consumer.movieList.map((mv, index) => (
-        <Movie key={index} movie={mv} />
+        <Movie key={index} movie={mv} id={mv.id} />
       ))}
     </div>
   );

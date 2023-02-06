@@ -3,8 +3,10 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Context from "./Context";
 import Employee from "./Employee";
+import { useNavigate } from "react-router-dom";
 
 export default function EmployeeCreate() {
+  const navigate = useNavigate();
   const consumer = useContext(Context);
   const emp = {
     name: "Nathan Mohr",
@@ -22,7 +24,7 @@ export default function EmployeeCreate() {
     const newEmp = { name, email, address, username, id };
     consumer.setData([...consumer.data, newEmp]);
     console.log("Done craeting");
-    <Employee />;
+    navigate(-1);
   };
   return (
     <div className="add-movie-form">

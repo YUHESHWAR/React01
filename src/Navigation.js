@@ -6,8 +6,8 @@ export default function Navigation() {
     <div className="navbar">
       <Link to="/">Home</Link>
       <Link to="/movies">Movies</Link>
-      <Link to="/color-game">Color Game</Link>
       <Link to="/movie/add">Add Movie</Link>
+      <Link to="/color-game">Color Game</Link>
       <Link to="/employee">Employee</Link>
     </div>
   );

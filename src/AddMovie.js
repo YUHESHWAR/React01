@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Context from "./Context";
+import { useNavigate } from "react-router-dom";
 
 export function AddMovie() {
+  const navigate = useNavigate();
   const consumer = useContext(Context);
   const [name, setName] = useState("");
   const [poster, setPoster] = useState("");
@@ -12,6 +14,7 @@ export function AddMovie() {
   const addMovie = () => {
     const newMovie = { name, poster, rating, summary };
     consumer.setMovieList([...consumer.movieList, newMovie]);
+    navigate("/movies");
   };
   return (
     <div className="add-movie-form">

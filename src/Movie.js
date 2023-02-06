@@ -6,8 +6,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
+import InfoIcon from "@mui/icons-material/Info";
+import { useNavigate } from "react-router-dom";
 
-export function Movie({ movie }) {
+export function Movie({ movie, id }) {
+  const navigate = useNavigate();
   const styles = {
     color: movie.rating >= 8 ? "green" : "red",
   };
@@ -27,9 +30,17 @@ export function Movie({ movie }) {
             >
               {toggle ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </IconButton>
+            <IconButton
+              aria-label="Movie Info"
+              color="primary"
+              onClick={() => navigate(`/movies/${id}`)}
+              sx={{ fontSize: "24px" }}
+            >
+              <InfoIcon />
+            </IconButton>
           </h2>
           <p className="movie-rating" style={styles}>
-            ⭐️{movie.rating}
+            ⭐️ {movie.rating}
           </p>
         </div>
         {toggle ? <p className="movie-summary">{movie.summary}</p> : null}
