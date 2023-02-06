@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Context from "./Context";
 import Button from "@mui/material/Button";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 export default function MovieDetails() {
   const navigate = useNavigate();
@@ -31,11 +31,12 @@ export default function MovieDetails() {
         </div>
         <p className="movie-summary">{movie.summary}</p>
         <Button
-          sx={{ marginTop: "20px", paddingLeft: "10px" }}
+          startIcon={<KeyboardBackspaceIcon />}
+          sx={{ marginTop: "20px" }}
           variant="contained"
           onClick={() => navigate(-1)}
         >
-          <ArrowBackIcon sx={{ marginRight: "5px" }} /> Back
+          Back
         </Button>
       </div>
     </div>

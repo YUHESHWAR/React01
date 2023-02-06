@@ -6,11 +6,7 @@
   gap: 40px;
 } */
 .navbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 20px 35px;
+  margin-bottom: 35px;
 }
 body {
   font-family: Roboto;
@@ -47,7 +43,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 20px;
 }
 .movie-poster {
