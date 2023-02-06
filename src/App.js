@@ -43,6 +43,7 @@ function App() {
       rating: 8.4,
       summary:
         "A special agent investigates a murder committed by a masked group of serial killers. However, a tangled maze of clues soon leads him to the drug kingpin of Chennai. ",
+      trailer: "https://www.youtube.com/embed/OKBMCL-frPU",
     },
     {
       id: "2",
@@ -52,6 +53,7 @@ function App() {
       rating: 7.9,
       summary:
         "A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers.",
+      trailer: "https://www.youtube.com/embed/oO8TTM2FgIA",
     },
     {
       id: "3",
@@ -61,6 +63,7 @@ function App() {
       rating: 8.1,
       summary:
         "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy.",
+      trailer: "https://www.youtube.com/embed/64KCdvkgk2M",
     },
     {
       id: "4",
@@ -70,6 +73,7 @@ function App() {
       rating: 9.1,
       summary:
         "Two youngsters Adi and Tara are attracted to each other when they meet at a wedding. Since they do not believe in marriage, they decide to live together. What follows forms the crux of the story.",
+      trailer: "https://www.youtube.com/embed/2mBG4vlhcCc",
     },
     {
       id: "5",
@@ -79,6 +83,7 @@ function App() {
       rating: 8.1,
       summary:
         "Cobb steals information from his targets by entering their dreams. Saito offers to wipe clean Cobb's criminal history as payment for performing an inception on his sick competitor's son.",
+      trailer: "https://www.youtube.com/embed/YoHD9XEInc0",
     },
     {
       id: "6",
@@ -87,6 +92,7 @@ function App() {
       rating: 7.1,
       summary:
         "Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements.",
+      trailer: "https://www.youtube.com/embed/pWdKf3MneyI",
     },
     {
       id: "7",
@@ -96,6 +102,7 @@ function App() {
       rating: 7.3,
       summary:
         "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.And has an idea to expand to the outer world",
+      trailer: "https://www.youtube.com/embed/xjDjIWPwcPU",
     },
     {
       id: "8",
@@ -105,6 +112,7 @@ function App() {
       rating: 6.9,
       summary:
         "During World War II, Steve Rogers decides to volunteer in an experiment that transforms his weak body. He must now battle a secret Nazi organisation headed by Johann Schmidt to defend his nation.",
+      trailer: "https://www.youtube.com/embed/W4DlMggBPvc",
     },
   ]);
   const [data, setData] = useState([
