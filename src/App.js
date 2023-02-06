@@ -14,6 +14,8 @@ import EmployeeView from "./EmployeeView";
 import About from "./About";
 import { Home } from "./Home";
 import MovieDetails from "./MovieDetails";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
 function App() {
   const users = [
@@ -187,37 +189,52 @@ function App() {
       id: "10",
     },
   ]);
+  const [mode, setMode] = useState("light");
+  const theme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
   return (
-    <div className="App">
-      {/* <div>
+    <ThemeProvider theme={theme}>
+      <Paper sx={{ minHeight: "100vh", borderRadius: "0px" }} elevation={3}>
+        <div className="App">
+          {/* <div>
         {users.map(({ name, url }) => (
           <Msg name={name} url={url} />
         ))}
       </div> */}
-      <Context.Provider
-        value={{
-          movieList,
-          setMovieList,
-          data,
-          setData,
-        }}
-      >
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<MovieList />} />
-          <Route path="/films" element={<Navigate replace to="/movies" />} />
-          <Route path="/movie/add" element={<AddMovie />} />
-          <Route path="/movies/:id" element={<MovieDetails />} />
-          <Route path="/color-game" element={<ColorGame />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/employee" element={<Employee />} />
-          <Route path="/employee/create" element={<EmployeeCreate />} />
-          <Route path="/employee/view/:id" element={<EmployeeView />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Context.Provider>
-    </div>
+          <Context.Provider
+            value={{
+              movieList,
+              setMovieList,
+              data,
+              setData,
+              mode,
+              setMode,
+            }}
+          >
+            <Navigation />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/movies" element={<MovieList />} />
+              <Route
+                path="/films"
+                element={<Navigate replace to="/movies" />}
+              />
+              <Route path="/movie/add" element={<AddMovie />} />
+              <Route path="/movies/:id" element={<MovieDetails />} />
+              <Route path="/color-game" element={<ColorGame />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/employee" element={<Employee />} />
+              <Route path="/employee/create" element={<EmployeeCreate />} />
+              <Route path="/employee/view/:id" element={<EmployeeView />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Context.Provider>
+        </div>
+      </Paper>
+    </ThemeProvider>
   );
 }
 
