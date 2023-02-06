@@ -3,6 +3,16 @@ import { Msg } from "./Msg";
 import { MovieList } from "./MovieList";
 import { ColorGame } from "./ColorGame";
 import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Navigation from "./Navigation";
+import NotFound from "./NotFound";
+import { AddMovie } from "./AddMovie";
+import Context from "./Context";
+import Employee from "./Employee";
+import EmployeeCreate from "./EmployeeCreate";
+import EmployeeView from "./EmployeeView";
+import About from "./About";
+import { Home } from "./Home";
 
 function App() {
   const users = [
@@ -41,12 +51,28 @@ function App() {
         "A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers.",
     },
     {
-      name: "Bahubali : The beginning",
+      name: "Bahubali",
       poster:
         "https://m.media-amazon.com/images/M/MV5BYWVlMjVhZWYtNWViNC00ODFkLTk1MmItYjU1MDY5ZDdhMTU3XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_.jpg",
       rating: 8.1,
       summary:
         "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy.",
+    },
+    {
+      name: "Ok Kanmani",
+      poster:
+        "https://i.scdn.co/image/ab67616d0000b2732318539f1b037d942fafa581",
+      rating: 9.1,
+      summary:
+        "Two youngsters Adi and Tara are attracted to each other when they meet at a wedding. Since they do not believe in marriage, they decide to live together. What follows forms the crux of the story.",
+    },
+    {
+      name: "Inception",
+      poster:
+        "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+      rating: 8.1,
+      summary:
+        "Cobb steals information from his targets by entering their dreams. Saito offers to wipe clean Cobb's criminal history as payment for performing an inception on his sick competitor's son.",
     },
     {
       name: "Ant Man",
@@ -61,7 +87,7 @@ function App() {
         "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpg",
       rating: 7.3,
       summary:
-        "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.",
+        "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.And has an idea to expand to the outer world",
     },
     {
       name: "Captain America",
@@ -72,6 +98,78 @@ function App() {
         "During World War II, Steve Rogers decides to volunteer in an experiment that transforms his weak body. He must now battle a secret Nazi organisation headed by Johann Schmidt to defend his nation.",
     },
   ]);
+  const [data, setData] = useState([
+    {
+      name: "Nathan Mohr",
+      email: "Dianna_Weimann99@yahoo.com",
+      address: "Bothell",
+      username: "Zita.Johnson48",
+      id: "1",
+    },
+    {
+      name: "Rosie Cartwright",
+      email: "Hilton_Hettinger@hotmail.com",
+      address: "Hermanhaven",
+      username: "Bruce.Kerluke",
+      id: "2",
+    },
+    {
+      name: "Candace Gerlach",
+      email: "Garfield.Bauch84@gmail.com",
+      address: "Everett",
+      username: "Nathaniel.Luettgen89",
+      id: "3",
+    },
+    {
+      name: "Roberta Hoppe",
+      email: "Myles_Beer99@gmail.com",
+      address: "East Ashtyn",
+      username: "Novella.West",
+      id: "4",
+    },
+    {
+      name: "Miss Katherine Barrows",
+      email: "Maximilian_Quigley39@yahoo.com",
+      address: "Koelpinhaven",
+      username: "Melody_Becker47",
+      id: "5",
+    },
+    {
+      name: "Ervin Kuvalis",
+      email: "Brandyn71@yahoo.com",
+      address: "Jakaylaport",
+      username: "Noemie.Connelly",
+      id: "6",
+    },
+    {
+      name: "Mr. Ed Reinger",
+      email: "Brannon.Zulauf49@gmail.com",
+      address: "New Bonnie",
+      username: "Matilda70",
+      id: "7",
+    },
+    {
+      name: "Sidney Ledner",
+      email: "Josiane69@yahoo.com",
+      address: "Melvinside",
+      username: "Estefania.Rodriguez59",
+      id: "8",
+    },
+    {
+      name: "Rufus Fritsch",
+      email: "Aditya.Lynch@yahoo.com",
+      address: "Russelview",
+      username: "Ernie_Von",
+      id: "9",
+    },
+    {
+      name: "Jenny Ryan",
+      email: "Kristy_Gleichner93@yahoo.com",
+      address: "Jerdefield",
+      username: "Avery.Lind",
+      id: "10",
+    },
+  ]);
   return (
     <div className="App">
       {/* <div>
@@ -79,52 +177,28 @@ function App() {
           <Msg name={name} url={url} />
         ))}
       </div> */}
-      {/* <ColorGame /> */}
-      <AddMovie movieList={movieList} setMovieList={setMovieList} />
-      <MovieList movieList={movieList} />
-    </div>
-  );
-}
-
-function AddMovie({ movieList, setMovieList }) {
-  const [name, setName] = useState("");
-  const [poster, setPoster] = useState("");
-  const [rating, setRating] = useState("");
-  const [summary, setSummary] = useState("");
-  return (
-    <div className="add-movie-form">
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Poster"
-        value={poster}
-        onChange={(event) => setPoster(event.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Rating"
-        value={rating}
-        onChange={(event) => setRating(event.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Summary"
-        value={summary}
-        onChange={(event) => setSummary(event.target.value)}
-      />
-      <button
-        onClick={() => {
-          const newMovie = { name, poster, rating, summary };
-          setMovieList([...movieList, newMovie]);
+      <Context.Provider
+        value={{
+          movieList,
+          setMovieList,
+          data,
+          setData,
         }}
       >
-        Add Movie
-      </button>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<MovieList />} />
+          <Route path="/films" element={<Navigate replace to="/movies" />} />
+          <Route path="/movie/add" element={<AddMovie />} />
+          <Route path="/color-game" element={<ColorGame />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/employee" element={<Employee />} />
+          <Route path="/employee/create" element={<EmployeeCreate />} />
+          <Route path="/employee/view/:id" element={<EmployeeView />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Context.Provider>
     </div>
   );
 }

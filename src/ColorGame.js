@@ -15,7 +15,7 @@ export function ColorGame() {
     "lightblue",
   ]);
   return (
-    <div>
+    <div className="color-game-block">
       <input
         style={styles}
         onChange={(event) => setColor(event.target.value)}

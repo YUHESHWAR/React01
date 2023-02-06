@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import Context from "./Context";
 
 export default function EmployeeView() {
   const { id } = useParams();
-  const location = useLocation();
+  const consumer = useContext(Context);
   return (
     <div>
-      {location.state.data
+      {consumer.data
         .filter((value) => value.id === id)
         .map((data) => {
-          return <h1>{data.name}</h1>;
+          return <h1 style={{ textAlign: "center" }}>{data.name}</h1>;
         })}
     </div>
   );

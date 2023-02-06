@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import Context from "./Context";
 import { Movie } from "./Movie";
 
-export function MovieList({ movieList }) {
+export function MovieList() {
+  const consumer = useContext(Context);
   return (
     <div className="movie-list">
-      {movieList.map((mv, index) => (
+      {consumer.movieList.map((mv, index) => (
         <Movie key={index} movie={mv} />
       ))}
     </div>

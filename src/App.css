@@ -5,6 +5,15 @@
   justify-content: center;
   gap: 40px;
 } */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+body {
+  font-family: Roboto;
+}
 .profile {
   height: 225px;
   aspect-ratio: 1/ 1;
@@ -12,15 +21,21 @@
   background-size: cover;
 }
 
+/* Color Game CSS */
+.color-game-block {
+  display: table;
+  margin: 0 auto;
+}
+
 /* Counter CSS */
 .buttons {
+  width: 340px;
   display: flex;
-  gap: 10px;
-  justify-content: flex-end;
+  gap: 15px;
+  justify-content: flex-start;
 }
 .counter {
   margin: 0 auto;
-  margin-bottom: 30px;
 }
 .progress-bar {
   width: 100%;
@@ -30,7 +45,7 @@
 .movie-list {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   gap: 20px;
 }

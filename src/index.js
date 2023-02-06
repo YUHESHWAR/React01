@@ -4,26 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import About from "./About";
-import Navigation from "./Navigation";
-import NotFound from "./NotFound";
-import Employee from "./Employee";
-import EmployeeCreate from "./EmployeeCreate";
-import EmployeeView from "./EmployeeView";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <Navigation /> */}
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/employee" element={<Employee />} />
-        <Route path="/employee/create" element={<EmployeeCreate />} />
-        <Route path="/employee/view/:id" element={<EmployeeView />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import IconButton from "@mui/material/IconButton";
+import Badge from "@mui/material/Badge";
 
 export function Counter() {
   const [like, setLike] = useState(0);
@@ -7,9 +9,11 @@ export function Counter() {
     color: like > 20 ? "orange" : "blue",
     textAlign: "center",
   };
+  const increamentLike = () => setLike(like + 1);
+  const increamentDislike = () => setDislike(dislike + 1);
   return (
     <div className="counter">
-      {like >= 10 && like <= 20 ? (
+      {/* {like >= 10 && like <= 20 ? (
         <h3 style={styles}>You have reached 10 likes</h3>
       ) : null}
       {like > 20 ? (
@@ -19,10 +23,29 @@ export function Counter() {
         className="progress-bar"
         max={100}
         value={(like / (like + dislike)) * 100 || 0}
-      ></progress>
+      ></progress> */}
       <div className="buttons">
-        <button onClick={() => setLike(like + 1)}>👍🏻 {like}</button>
-        <button onClick={() => setDislike(dislike + 1)}>👎🏻 {dislike}</button>
+        <IconButton
+          aria-label="Like Movie"
+          color="primary"
+          onClick={increamentLike}
+          sx={{ fontSize: "24px" }}
+        >
+          <Badge badgeContent={like} color="primary">
+            👍
+          </Badge>
+        </IconButton>
+
+        <IconButton
+          aria-label="DisLike Movie"
+          color="primary"
+          onClick={increamentDislike}
+          sx={{ fontSize: "24px" }}
+        >
+          <Badge badgeContent={dislike} color="error">
+            👎
+          </Badge>
+        </IconButton>
         <br />
       </div>
     </div>

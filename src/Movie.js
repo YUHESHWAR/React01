@@ -1,23 +1,42 @@
 import { useState } from "react";
 import { Counter } from "./Counter";
+import IconButton from "@mui/material/IconButton";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 
 export function Movie({ movie }) {
   const styles = {
     color: movie.rating >= 8 ? "green" : "red",
   };
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   return (
-    <div className="movie-container">
+    <Card sx={{ heigth: "min-content" }} className="movie-container">
       <img className="movie-poster" src={movie.poster} alt="Movie Poster" />
-      <div className="movie-spec">
-        <h2 className="movie-name">{movie.name}</h2>
-        <p className="movie-rating" style={styles}>
-          ⭐️{movie.rating}
-        </p>
-      </div>
-      <button onClick={() => setToggle(!toggle)}>Toggle Summary</button>
-      {toggle ? <p className="movie-summary">{movie.summary}</p> : null}
-      <Counter />
-    </div>
+      <CardContent>
+        <div className="movie-spec">
+          <h2 className="movie-name">
+            {movie.name}{" "}
+            <IconButton
+              aria-label="Toggle Movie Description"
+              color="primary"
+              onClick={() => setToggle(!toggle)}
+              sx={{ fontSize: "24px" }}
+            >
+              {toggle ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+            </IconButton>
+          </h2>
+          <p className="movie-rating" style={styles}>
+            ⭐️{movie.rating}
+          </p>
+        </div>
+        {toggle ? <p className="movie-summary">{movie.summary}</p> : null}
+      </CardContent>
+      <CardActions>
+        <Counter />
+      </CardActions>
+    </Card>
   );
 }
