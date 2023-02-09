@@ -36,7 +36,7 @@ function App() {
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHTc7edKDzNid7vBPLhiWEp89bPfTNvTd4g&usqp=CAU",
     },
   ];
-  const [movieList, setMovieList] = useState([]);
+
   const [data, setData] = useState([
     {
       name: "Nathan Mohr",
@@ -115,11 +115,6 @@ function App() {
       mode: mode,
     },
   });
-  useEffect(() => {
-    fetch("https://63e0de2f65b57fe6064b3ed9.mockapi.io/movies")
-      .then((data) => data.json())
-      .then((movies) => setMovieList(movies));
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -135,8 +130,6 @@ function App() {
       </div> */}
           <Context.Provider
             value={{
-              movieList,
-              setMovieList,
               data,
               setData,
               mode,

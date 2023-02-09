@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Context from "./Context";
 import Button from "@mui/material/Button";
@@ -6,9 +6,13 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 export default function MovieDetails() {
   const navigate = useNavigate();
-  const consumer = useContext(Context);
   const { id } = useParams();
-  const movie = consumer.movieList[id - 1];
+  const [movie, setMovie] = useState([]);
+  useEffect(() => {
+    fetch(`https://63e0de2f65b57fe6064b3ed9.mockapi.io/movies/${id}`)
+      .then((data) => data.json())
+      .then((movie) => setMovie(movie));
+  }, []);
   const styles = {
     color: movie.rating >= 8 ? "green" : "red",
   };

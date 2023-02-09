@@ -30,10 +30,12 @@ body {
 
 /* Counter CSS */
 .buttons {
-  width: 340px;
+  /* width: 340px; */
   display: flex;
   gap: 15px;
   justify-content: flex-start;
+  position: relative;
+  left: -80%;
 }
 .counter {
   margin: 0 auto;
