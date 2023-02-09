@@ -23,7 +23,6 @@ export default function EmployeeCreate() {
   const createEmployee = () => {
     const newEmp = { name, email, address, username, id };
     consumer.setData([...consumer.data, newEmp]);
-    console.log("Done craeting");
     navigate(-1);
   };
   return (

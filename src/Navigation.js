@@ -10,9 +10,7 @@ import Context from "./Context";
 export default function Navigation() {
   const consumer = useContext(Context);
   const navigate = useNavigate();
-  fetch("https://63e0de2f65b57fe6064b3ed9.mockapi.io/movies")
-    .then((data) => data.json())
-    .then((movies) => console.log(movies));
+
   return (
     <div className="navbar">
       <AppBar position="static">

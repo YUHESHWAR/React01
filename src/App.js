@@ -2,7 +2,7 @@ import "./App.css";
 import { Msg } from "./Msg";
 import { MovieList } from "./MovieList";
 import { ColorGame } from "./ColorGame";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navigation from "./Navigation";
 import NotFound from "./NotFound";
@@ -36,87 +36,7 @@ function App() {
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHTc7edKDzNid7vBPLhiWEp89bPfTNvTd4g&usqp=CAU",
     },
   ];
-  const [movieList, setMovieList] = useState([
-    {
-      id: "1",
-      name: "Vikram",
-      poster:
-        "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRcywLT8os8ZXJb7n3hmSzrSzpnLIDNgHeIufdEvCprHyuxThul",
-      rating: 8.4,
-      summary:
-        "A special agent investigates a murder committed by a masked group of serial killers. However, a tangled maze of clues soon leads him to the drug kingpin of Chennai. ",
-      trailer: "https://www.youtube.com/embed/OKBMCL-frPU",
-    },
-    {
-      id: "2",
-      name: "RRR",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5Y2E5ZjBmNTMzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg",
-      rating: 7.9,
-      summary:
-        "A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers.",
-      trailer: "https://www.youtube.com/embed/oO8TTM2FgIA",
-    },
-    {
-      id: "3",
-      name: "Bahubali",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BYWVlMjVhZWYtNWViNC00ODFkLTk1MmItYjU1MDY5ZDdhMTU3XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_.jpg",
-      rating: 8.1,
-      summary:
-        "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy.",
-      trailer: "https://www.youtube.com/embed/64KCdvkgk2M",
-    },
-    {
-      id: "4",
-      name: "Ok Kanmani",
-      poster:
-        "https://i.scdn.co/image/ab67616d0000b2732318539f1b037d942fafa581",
-      rating: 9.1,
-      summary:
-        "Two youngsters Adi and Tara are attracted to each other when they meet at a wedding. Since they do not believe in marriage, they decide to live together. What follows forms the crux of the story.",
-      trailer: "https://www.youtube.com/embed/2mBG4vlhcCc",
-    },
-    {
-      id: "5",
-      name: "Inception",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
-      rating: 8.1,
-      summary:
-        "Cobb steals information from his targets by entering their dreams. Saito offers to wipe clean Cobb's criminal history as payment for performing an inception on his sick competitor's son.",
-      trailer: "https://www.youtube.com/embed/YoHD9XEInc0",
-    },
-    {
-      id: "6",
-      name: "Ant Man",
-      poster: "http://www.movienewsletters.net/photos/208057R1.jpg",
-      rating: 7.1,
-      summary:
-        "Scott, a master thief, gains the ability to shrink in scale with the help of a futuristic suit. Now he must rise to the occasion of his superhero status and protect his secret from unsavoury elements.",
-      trailer: "https://www.youtube.com/embed/pWdKf3MneyI",
-    },
-    {
-      id: "7",
-      name: "Black Panther",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_.jpg",
-      rating: 7.3,
-      summary:
-        "After his father's death, T'Challa returns home to Wakanda to inherit his throne. However, a powerful enemy related to his family threatens to attack his nation.And has an idea to expand to the outer world",
-      trailer: "https://www.youtube.com/embed/xjDjIWPwcPU",
-    },
-    {
-      id: "8",
-      name: "Captain America",
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_FMjpg_UX1000_.jpg",
-      rating: 6.9,
-      summary:
-        "During World War II, Steve Rogers decides to volunteer in an experiment that transforms his weak body. He must now battle a secret Nazi organisation headed by Johann Schmidt to defend his nation.",
-      trailer: "https://www.youtube.com/embed/W4DlMggBPvc",
-    },
-  ]);
+  const [movieList, setMovieList] = useState([]);
   const [data, setData] = useState([
     {
       name: "Nathan Mohr",
@@ -195,9 +115,18 @@ function App() {
       mode: mode,
     },
   });
+  useEffect(() => {
+    fetch("https://63e0de2f65b57fe6064b3ed9.mockapi.io/movies")
+      .then((data) => data.json())
+      .then((movies) => setMovieList(movies));
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-      <Paper sx={{ minHeight: "100vh", borderRadius: "0px" }} elevation={3}>
+      <Paper
+        sx={{ minHeight: "100vh", borderRadius: "0px", minWidth: "100vw" }}
+        elevation={3}
+      >
         <div className="App">
           {/* <div>
         {users.map(({ name, url }) => (
