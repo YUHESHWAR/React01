@@ -16,6 +16,7 @@ import { Home } from "./Home";
 import MovieDetails from "./MovieDetails";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import BasicForm from "./BasicForm";
 
 function App() {
   const users = [
@@ -151,6 +152,7 @@ function App() {
               <Route path="/employee" element={<Employee />} />
               <Route path="/employee/create" element={<EmployeeCreate />} />
               <Route path="/employee/view/:id" element={<EmployeeView />} />
+              <Route path="/basic-form" element={<BasicForm />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Context.Provider>

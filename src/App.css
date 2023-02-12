@@ -29,17 +29,16 @@ body {
 }
 
 /* Counter CSS */
-.buttons {
-  /* width: 340px; */
+/* .buttons {
   display: flex;
   gap: 15px;
   justify-content: flex-start;
   position: relative;
   left: -80%;
-}
-.counter {
-  margin: 0 auto;
-}
+} */
+/* .counter {
+  margin: 0;
+} */
 .progress-bar {
   width: 100%;
 }
@@ -75,6 +74,10 @@ body {
 .movie-summary {
   margin: 0;
 }
+.utils {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* Add Movie CSS */
 .add-movie-form {
@@ -97,4 +100,14 @@ body {
   left: 5%;
   width: 90%;
   aspect-ratio: 16/9;
+}
+
+/* Basic Form CSS */
+.user-form {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 auto;
+  max-width: 450px;
 }

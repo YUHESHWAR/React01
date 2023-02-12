@@ -11,6 +11,10 @@ export function MovieList() {
       .then((movies) => setMovieList(movies));
   };
   useEffect(() => getMovies(), []);
+  const validateAdmin = () => {
+    const val = prompt("enter the pasword");
+    return val === "030303";
+  };
   const deleteMovie = (id) => {
     fetch(`https://63e0de2f65b57fe6064b3ed9.mockapi.io/movies/${id}`, {
       method: "DELETE",
@@ -27,7 +31,13 @@ export function MovieList() {
             <IconButton
               aria-label="delete"
               color="error"
-              onClick={() => deleteMovie(mv.id)}
+              onClick={() =>
+                validateAdmin()
+                  ? deleteMovie(mv.id)
+                  : window.alert(
+                      "Only the alpha can delete the movies and looks like you aren't one"
+                    )
+              }
             >
               <DeleteIcon />
             </IconButton>

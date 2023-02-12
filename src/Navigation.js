@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
@@ -42,10 +42,10 @@ export default function Navigation() {
             }
             color="inherit"
             onClick={() =>
-              consumer.setMode(consumer.mode == "dark" ? "light" : "dark")
+              consumer.setMode(consumer.mode === "dark" ? "light" : "dark")
             }
           >
-            {consumer.mode == "dark" ? "light" : "dark"} Mode
+            {consumer.mode === "dark" ? "light" : "dark"} Mode
           </Button>
         </Toolbar>
       </AppBar>

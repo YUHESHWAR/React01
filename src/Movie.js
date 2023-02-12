@@ -18,7 +18,7 @@ export function Movie({ movie, id, deleteButton }) {
   return (
     <Card sx={{ heigth: "min-content" }} className="movie-container">
       <img className="movie-poster" src={movie.poster} alt="Movie Poster" />
-      <CardContent>
+      <CardContent sx={{ paddingBottom: 0 }}>
         <div className="movie-spec">
           <h2 className="movie-name">
             {movie.name}{" "}
@@ -45,7 +45,7 @@ export function Movie({ movie, id, deleteButton }) {
         </div>
         {toggle ? <p className="movie-summary">{movie.summary}</p> : null}
       </CardContent>
-      <CardActions>
+      <CardActions className="utils">
         <Counter />
         {deleteButton}
       </CardActions>
