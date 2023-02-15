@@ -14,7 +14,7 @@ export function Movie({ movie, id, deleteButton }) {
   const styles = {
     color: movie.rating >= 8 ? "green" : "red",
   };
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   return (
     <Card sx={{ heigth: "min-content" }} className="movie-container">
       <img className="movie-poster" src={movie.poster} alt="Movie Poster" />
