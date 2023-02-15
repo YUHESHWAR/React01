@@ -2,7 +2,7 @@ import "./App.css";
 import { Msg } from "./Msg";
 import { MovieList } from "./MovieList";
 import { ColorGame } from "./ColorGame";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navigation from "./Navigation";
 import NotFound from "./NotFound";
@@ -17,6 +17,7 @@ import MovieDetails from "./MovieDetails";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import BasicForm from "./BasicForm";
+import UpdateMovie from "./UpdateMovie";
 
 function App() {
   const users = [
@@ -146,6 +147,7 @@ function App() {
                 element={<Navigate replace to="/movies" />}
               />
               <Route path="/movie/add" element={<AddMovie />} />
+              <Route path="/movie/update/:id" element={<UpdateMovie />} />
               <Route path="/movies/:id" element={<MovieDetails />} />
               <Route path="/color-game" element={<ColorGame />} />
               <Route path="/about" element={<About />} />
