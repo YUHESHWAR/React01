@@ -18,8 +18,8 @@ export function AddMovie() {
     rating: yup
       .number()
       .required("Rate this movie now and I'll give you 10 bucks💰")
-      .min(0, "The rating should be between 1.0 to 10 Genius")
-      .max(10, "The rating should be between 1.0 to 10 Genius"),
+      .min(0, "The rating should be between 1.0 to 10 Genius🤣")
+      .max(10, "The rating should be between 1.0 to 10 Genius🤣"),
     summary: yup
       .string()
       .required("Dont tell me that the movie doesnt have a summary 😜")
