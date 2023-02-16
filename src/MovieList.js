@@ -16,7 +16,7 @@ export function MovieList() {
   useEffect(() => getMovies(), []);
   const validateAdmin = () => {
     const val = prompt("enter the pasword");
-    return val === "030303";
+    return val === "123456";
   };
   const deleteMovie = (id) => {
     fetch(`https://63e0de2f65b57fe6064b3ed9.mockapi.io/movies/${id}`, {
