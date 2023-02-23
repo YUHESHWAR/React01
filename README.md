@@ -1,5 +1,7 @@
 # ADMIN PASSWORD - 123456
 
+Deployed URL - https://react-proj-01.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
